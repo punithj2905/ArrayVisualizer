@@ -1,10 +1,10 @@
 let arr=[];
 let delay=200;
 let paused=false;
-let pauseResolvers=[];  // Fixed: renamed from pauseResolverList
+let pauseResolvers=[];  
 let comparisonMode=false;
 
-// Get DOM references
+
 const msg = document.getElementById('msg');
 const status = document.getElementById('status');
 const visualA = document.getElementById('visualA');
@@ -12,7 +12,6 @@ const visualB = document.getElementById('visualB');
 
 function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
 
-// Fixed: removed duplicate pause function
 function pause(){
 paused=true;
 }
@@ -233,7 +232,7 @@ async function compareAlgorithms(){
         runSort(algoB,visualB)
     ]);
 
-    // FIX: show theory panels
+    //show theory panels
     updateTheoryPanel(algoA, "infoA");
     updateTheoryPanel(algoB, "infoB");
 

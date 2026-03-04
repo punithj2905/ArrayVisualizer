@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Array Visualizer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="card">
+
+<h1>Array Visualizer</h1>
+
+<div class="controls">
+<input id="arrayInput" placeholder="Enter numbers space separated">
+
+<select id="algoA">
+<option value="bubble">Bubble Sort</option>
+<option value="selection">Selection Sort</option>
+<option value="insertion">Insertion Sort</option>
+<option value="merge">Merge Sort</option>
+<option value="quick">Quick Sort</option>
+</select>
+
+<select id="algoB">
+<option value="bubble">Bubble Sort</option>
+<option value="selection">Selection Sort</option>
+<option value="insertion">Insertion Sort</option>
+<option value="merge">Merge Sort</option>
+<option value="quick">Quick Sort</option>
+</select>
+<button onclick="runVisualization()">Run Visualization</button>
+</div>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+<button onclick="loadArray()">Load Array</button>
+<button onclick="randomArray()">Random Array</button>
+<button onclick="toggleComparisonMode()">Comparison Mode</button>
+<button onclick="compareAlgorithms()">Compare Sorting</button>
+<button class="pause-btn" onclick="pause()">Pause</button>
+<button onclick="resume()">Resume</button>
+</div>
+
+Speed
+<input type="range" min="50" max="500" value="200"
+oninput="delay=550-this.value">
+
+<div class="visual-container">
+<div>
+<h3 style="text-align:center">Algorithm A</h3>
+<div id="visualA" class="visual-area"></div>
+<div id="infoA" class="info-panel"></div>
+</div>
+<div id="panelB" style="display:none">
+<h3 style="text-align:center">Algorithm B</h3>
+<div id="visualB" class="visual-area"></div>
+<div id="infoB" class="info-panel"></div>
+</div>
+</div>
+
+<div class="status" id="status"></div>
+<div id="msg"></div>
+</div>
+<script src="js/ArrayVisualizer.js"></script>
+</script>
+</body>
+</html>
